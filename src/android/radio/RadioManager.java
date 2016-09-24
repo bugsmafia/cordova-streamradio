@@ -88,7 +88,8 @@ public class RadioManager implements IRadioManager {
         mService.play(streamURL);
     }
 	
-	 public void updateNotification(String singerName, String songName) {
+	@Override
+	public void updateNotification(String singerName, String songName) {
       mService.play(singerName, songName); 
     }
     /**
