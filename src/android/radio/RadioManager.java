@@ -88,10 +88,7 @@ public class RadioManager implements IRadioManager {
         mService.play(streamURL);
     }
 	
-	@Override
-	public void updateNotification(String singerName, String songName) {
-      mService.play(singerName, songName); 
-    }
+
     /**
      * Stop Radio Streaming
      */
