@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.context.PackageManager;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory; 
 import android.media.AudioTrack;
@@ -512,7 +514,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * Pending intents
          */
         PendingIntent playPausePending = PendingIntent.getService(this, 0, intentPlayPause, 0);
-        PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
+        //PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
+		PendingIntent openPending = context.PackageManager.GetLaunchIntentForPackage('radioradio.ru');
+
+		pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+		
         PendingIntent cancelPending = PendingIntent.getService(this, 0, intentCancel, 0);
 		//PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, 0);
         /**
@@ -545,11 +551,10 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          */
 		 
 		 // .setContentIntent(openPending)
-		intent = context.PackageManager.GetLaunchIntentForPackage(context.PackageName);
-		private pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+		
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
-                .setContentIntent(pendingIntent)
+                .setContentIntent(openPending)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
