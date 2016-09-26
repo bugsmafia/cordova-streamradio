@@ -39,7 +39,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
     private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
 
     /**
      * Notification current values
@@ -543,9 +543,13 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         /**
          * Create notification instance
          */
+		 
+		 // .setContentIntent(openPending)
+		intent = context.PackageManager.GetLaunchIntentForPackage(context.PackageName);
+		private pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.UpdateCurrent);
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
-                .setContentIntent(openPending)
+                .setContentIntent(pendingIntent)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
