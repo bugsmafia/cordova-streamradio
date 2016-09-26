@@ -6,7 +6,9 @@ var RADIO = {
     play: function(successCallback, failureCallback, url, singerName, songName) {
         cordova.exec(successCallback, failureCallback, 'RadioPlugin', 'play', [ url, singerName, songName ]);
     },
-	
+	update: function(successCallback, failureCallback, url, singerName, songName) {
+        cordova.exec(successCallback, failureCallback, 'RadioPlugin', 'play', [ url, singerName, songName ]);
+    },
 
 	
     stop: function(successCallback, failureCallback) {
