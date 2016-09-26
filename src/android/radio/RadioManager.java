@@ -89,7 +89,7 @@ public class RadioManager implements IRadioManager {
     }
 	
 	public void UpdateRadio(String streamURL, String singerName, String songName) {
-      mService.updateNotification(singerName, songName);
+      mService.updateNotification(singerName, songName, smallArt, bigArt);
     }
 
     /**
