@@ -1,4 +1,4 @@
-﻿package radioradio.ru;
+package radioradio.ru;
 
 import android.app.Notification;
 import android.app.NotificationManager;
