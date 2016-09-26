@@ -197,7 +197,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
         }
 		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
-			stop();
+			//stop();
         }		
         return START_NOT_STICKY;
     }
@@ -512,7 +512,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * Pending intents
          */
         PendingIntent playPausePending = PendingIntent.getService(this, 0, intentPlayPause, 0);
-        PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 1);
+        PendingIntent openPending = PendingIntent.getService(this, 1, intentOpenPlayer, 1);
         PendingIntent cancelPending = PendingIntent.getService(this, 0, intentCancel, 0);
 
         /**
