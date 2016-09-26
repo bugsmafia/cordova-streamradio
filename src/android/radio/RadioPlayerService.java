@@ -547,10 +547,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          */
 		 
 		 // .setContentIntent(openPending)
-		Intent resultIntent = new Intent(context, cordovaActivity.getClass());
-		resultIntent.setAction(Intent.ACTION_MAIN);
-		resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-		PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, 0);
+		//Intent resultIntent = new Intent(context, cordovaActivity.getClass());
+		//PendingIntent.getService(this, 0, intentOpenPlayer, 0);
+		//resultIntent.setAction(Intent.ACTION_MAIN);
+		//resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+		PendingIntent resultPendingIntent = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
 		
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
