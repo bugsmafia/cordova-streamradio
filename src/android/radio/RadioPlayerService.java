@@ -5,7 +5,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.context.PackageManager;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory; 
@@ -41,7 +40,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
     private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.ACTION_MAIN";
 
     /**
      * Notification current values
@@ -514,10 +513,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * Pending intents
          */
         PendingIntent playPausePending = PendingIntent.getService(this, 0, intentPlayPause, 0);
-        //PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
-		PendingIntent openPending = context.PackageManager.GetLaunchIntentForPackage('radioradio.ru');
-
-		pendingIntent = PendingIntent.GetActivity(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+        PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
 		
         PendingIntent cancelPending = PendingIntent.getService(this, 0, intentCancel, 0);
 		//PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, 0);
