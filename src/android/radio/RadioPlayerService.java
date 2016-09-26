@@ -550,7 +550,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 		
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
-                .setContentIntent(openPending)
+                .setContentIntent(getPackageName())
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
