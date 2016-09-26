@@ -1,4 +1,4 @@
-package com.imsd.radio;
+package radioradio.ru;
 
 import android.content.ComponentName;
 import android.content.Context;

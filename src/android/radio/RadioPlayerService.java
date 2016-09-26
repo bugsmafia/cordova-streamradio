@@ -1,4 +1,4 @@
-package com.imsd.radio;
+package radioradio.ru;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -35,11 +35,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
     /**
      * Notification action intent strings
      */
-    private static final String NOTIFICATION_INTENT_PLAY_PAUSE = "com.imsd.radio.INTENT_PLAYPAUSE";
+    private static final String NOTIFICATION_INTENT_PLAY_PAUSE = "radioradio.ru.INTENT_PLAYPAUSE";
 
-    private static final String NOTIFICATION_INTENT_CANCEL = "com.imsd.radio.INTENT_CANCEL";
+    private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "com.imsd.radio.INTENT_OPENPLAYER";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
 
     /**
      * Notification current values

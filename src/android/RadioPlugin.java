@@ -1,4 +1,4 @@
-package com.imsd.radio;
+package radioradio.ru;
 
 
 // rm -fr MyApp; cordova create MyApp; cd MyApp;  cordova platform add android; cordova plugin add ../cordova-plugin/;

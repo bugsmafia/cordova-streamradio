@@ -11,7 +11,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Code taken from: https://github.com/wildabeast/BarcodeScanner
 */
-package com.imsd.radio;
+package radioradio.ru;
 
 import android.app.Activity;
 import android.content.Context;
