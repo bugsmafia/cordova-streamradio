@@ -505,16 +505,17 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * Intents
          */
         Intent intentPlayPause = new Intent(NOTIFICATION_INTENT_PLAY_PAUSE);
-        Intent intentOpenPlayer = new Intent(NOTIFICATION_INTENT_OPEN_PLAYER);
+        //Intent intentOpenPlayer = new Intent(NOTIFICATION_INTENT_OPEN_PLAYER);
+		Intent intentOpenPlayer = new Intent(context, 'radioradio.ru');
         Intent intentCancel = new Intent(NOTIFICATION_INTENT_CANCEL);
 
         /**
          * Pending intents
          */
         PendingIntent playPausePending = PendingIntent.getService(this, 0, intentPlayPause, 0);
-        PendingIntent openPending = PendingIntent.getService(this, 1, intentOpenPlayer, 1);
+        PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
         PendingIntent cancelPending = PendingIntent.getService(this, 0, intentCancel, 0);
-
+		//PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, 0);
         /**
          * Remote view for normal view
          */
