@@ -1,4 +1,4 @@
-package radioradio.ru;
+﻿package radioradio.ru;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -195,10 +195,10 @@ public class RadioPlayerService extends Service implements PlayerCallback {
             else if (mRadioUrl != null)
                 play(mRadioUrl);
 
-        } else if (action.equals(INTENT_OPENPLAYER)) {
-                stop();
         }
-		
+		else if (action.equals(INTENT_OPENPLAYER)) {
+			stop();
+        }		
         return START_NOT_STICKY;
     }
 
