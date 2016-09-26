@@ -196,7 +196,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                 play(mRadioUrl);
 
         }
-		else if (action.equals(INTENT_OPENPLAYER)) {
+		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
 			stop();
         }		
         return START_NOT_STICKY;
