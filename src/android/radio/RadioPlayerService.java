@@ -39,7 +39,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
     private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru";
 
     /**
      * Notification current values
@@ -505,8 +505,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * Intents
          */
         Intent intentPlayPause = new Intent(NOTIFICATION_INTENT_PLAY_PAUSE);
-        //Intent intentOpenPlayer = new Intent(NOTIFICATION_INTENT_OPEN_PLAYER);
-		Intent intentOpenPlayer = new Intent(context, cordovaActivity.getClass());
+        Intent intentOpenPlayer = new Intent(NOTIFICATION_INTENT_OPEN_PLAYER);
         Intent intentCancel = new Intent(NOTIFICATION_INTENT_CANCEL);
 
         /**
