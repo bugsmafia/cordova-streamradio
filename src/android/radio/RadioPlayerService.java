@@ -195,9 +195,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
             else if (mRadioUrl != null)
                 play(mRadioUrl);
 
-        }
-		
-		else if (action.equals(INTENT_OPENPLAYER)) {
+        } else if (action.equals(INTENT_OPENPLAYER)) {
                 stop();
         }
 		
