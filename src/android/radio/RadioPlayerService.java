@@ -547,10 +547,14 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          */
 		 
 		 // .setContentIntent(openPending)
+		Intent resultIntent = new Intent(context, cordovaActivity.getClass());
+		resultIntent.setAction(Intent.ACTION_MAIN);
+		resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+		PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, 0);
 		
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
-                .setContentIntent('radioradio.ru')
+                .setContentIntent(resultPendingIntent)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
