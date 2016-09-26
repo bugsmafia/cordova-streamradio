@@ -506,7 +506,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          */
         Intent intentPlayPause = new Intent(NOTIFICATION_INTENT_PLAY_PAUSE);
         //Intent intentOpenPlayer = new Intent(NOTIFICATION_INTENT_OPEN_PLAYER);
-		Intent intentOpenPlayer = new Intent(context, 'radioradio.ru');
+		Intent intentOpenPlayer = new Intent(context, cordovaActivity.getClass());
         Intent intentCancel = new Intent(NOTIFICATION_INTENT_CANCEL);
 
         /**
