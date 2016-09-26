@@ -1,4 +1,4 @@
-package radioradio.ru;
+package radioradio.ru.bugs;
 
 
 // rm -fr MyApp; cordova create MyApp; cd MyApp;  cordova platform add android; cordova plugin add ../cordova-plugin/;

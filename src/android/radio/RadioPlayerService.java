@@ -1,4 +1,4 @@
-package radioradio.ru;
+package radioradio.ru.bugs;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -6,7 +6,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory; 
 import android.media.AudioTrack;
 import android.os.AsyncTask;
 import android.os.Binder;
@@ -35,11 +35,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
     /**
      * Notification action intent strings
      */
-    private static final String NOTIFICATION_INTENT_PLAY_PAUSE = "radioradio.ru.INTENT_PLAYPAUSE";
+    private static final String NOTIFICATION_INTENT_PLAY_PAUSE = "radioradio.ru.bugs.INTENT_PLAYPAUSE";
 
-    private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
+    private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.bugs.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.bugs.INTENT_OPENPLAYER";
 
     /**
      * Notification current values
