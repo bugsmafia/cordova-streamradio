@@ -1,4 +1,4 @@
-package radioradio.ru.bugs;
+package radioradio.ru;
 
 public interface RadioListener {
 

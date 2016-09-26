@@ -1,4 +1,4 @@
-package radioradio.ru.bugs;
+package radioradio.ru;
 
 import android.os.AsyncTask;
 
