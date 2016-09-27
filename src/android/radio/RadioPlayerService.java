@@ -199,6 +199,10 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         }
 		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
 			//stop();
+			Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru");
+			if (launchIntent != null) { 
+				startActivity(launchIntent);//null pointer check in case package name was not found
+			}
         }		
         return START_NOT_STICKY;
     }
@@ -551,11 +555,13 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 		//PendingIntent.getService(this, 0, intentOpenPlayer, 0);
 		//resultIntent.setAction(Intent.ACTION_MAIN);
 		//resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-		PendingIntent resultPendingIntent = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
-		
+		//PendingIntent resultPendingIntent = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
+		//Intent intent = new Intent(this, NotificationReceiver.class);
+// use System.currentTimeMillis() to have a unique ID for the pending intent
+//PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
-                .setContentIntent(resultPendingIntent)
+                .setContentIntent(openPending)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
