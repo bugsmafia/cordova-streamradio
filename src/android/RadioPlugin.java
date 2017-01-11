@@ -14,11 +14,6 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 
-import java.io.BufferedReader;  
-import java.io.DataOutputStream;  
-import java.io.InputStreamReader;  
-import java.net.HttpURLConnection;  
-import java.net.URL;  
 
 
 import java.util.List;
@@ -48,14 +43,6 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
         PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
         pluginResult.setKeepCallback(true);
         callbackContext.success();
-		
-		
-		String url = "http://app.radioradio.ru/stat.php";  
-		URL obj = new URL(url);  
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();  
-		con.setRequestMethod("GET");
-		con.setDoOutput(true);  
-		DataOutputStream wr = new DataOutputStream(con.getOutputStream());  
 		
         return true;
       } catch (Exception e) {
