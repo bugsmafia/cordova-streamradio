@@ -97,6 +97,7 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
   @Override
   public void onRadioStarted() {
     Log.e(LOG_TAG, "RADIO STATE : PLAYING...");
+	PluginResult pluginResult = null;
 	pluginResult = new PluginResult(PluginResult.Status.OK, "RADIO STATE : PLAYING...");
   }
 
