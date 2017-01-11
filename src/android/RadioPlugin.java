@@ -14,6 +14,10 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 
+import java.net.HttpURLConnection;  
+import java.net.URL;  
+
+
 import java.util.List;
 
 //import co.mobiwise.library.radio.RadioListener;
@@ -43,9 +47,12 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
         callbackContext.success();
 		
 		
-		GetMethod get = new GetMethod("http://app.radioradio.ru/stat.php");
-		InputStream in = get.getResponseBodyAsStream();
-		get.releaseConnection();
+		String url = "http://app.radioradio.ru/stat.php";  
+		URL obj = new URL(url);  
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();  
+		con.setRequestMethod("GET");
+		con.setDoOutput(true);  
+		DataOutputStream wr = new DataOutputStream(con.getOutputStream());  
 		
         return true;
       } catch (Exception e) {
