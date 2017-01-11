@@ -14,8 +14,6 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 
-
-
 import java.util.List;
 
 //import co.mobiwise.library.radio.RadioListener;
@@ -42,8 +40,8 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
         this.connectionCallbackContext = callbackContext;
         PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
         pluginResult.setKeepCallback(true);
+
         callbackContext.success();
-		
         return true;
       } catch (Exception e) {
         Log.e(LOG_TAG, "Exception occurred: ".concat(e.getMessage()));
