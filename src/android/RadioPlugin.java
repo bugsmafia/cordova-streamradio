@@ -79,6 +79,7 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
   @Override
   public void onRadioLoading() {
     Log.e(LOG_TAG, "RADIO STATE : LOADING...");
+	tvOut.setText("Нажата кнопка Cancel");
   }
 
 
