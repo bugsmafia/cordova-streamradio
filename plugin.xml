@@ -34,6 +34,11 @@
               <action android:name="radioradio.ru.INTENT_OPENPLAYER"/>
               <action android:name="radioradio.ru.INTENT_CANCEL"/>
           </intent-filter>
+		<receiver android:name=".MyBroadcast">
+			<intent-filter>
+				<action android:name="radioradio.ru.library.notification.media.INTENT_OPENPLAYER"/>
+			</intent-filter>
+		</receiver>
         </service>
       </config-file>
 
