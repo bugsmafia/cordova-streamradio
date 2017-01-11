@@ -16,25 +16,12 @@ import org.apache.cordova.PluginResult;
 
 import java.util.List;
 
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.Toast;
 //import co.mobiwise.library.radio.RadioListener;
 //import co.mobiwise.library.radio.RadioManager;
 
 
 
 public class RadioPlugin extends CordovaPlugin implements RadioListener {
-	Toast toast = new Toast(getApplicationContext());
-	toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-	toast.setDuration(Toast.LENGTH_LONG);
-	toast.setView(layout);
-	toast.show();
-	
-	
 
   private static final String LOG_TAG = "RadioPlugin";
 
@@ -92,7 +79,6 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
   @Override
   public void onRadioLoading() {
     Log.e(LOG_TAG, "RADIO STATE : LOADING...");
-	Toast.makeText(this, "Нажата кнопка Cancel", Toast.LENGTH_LONG).show();
   }
 
 
