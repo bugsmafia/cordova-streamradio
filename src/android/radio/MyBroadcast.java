@@ -1,4 +1,4 @@
-package co.mobiwise.myapplication;
+package radioradio.ru.myapplication;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
