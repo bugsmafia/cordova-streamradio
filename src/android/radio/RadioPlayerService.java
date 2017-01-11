@@ -197,17 +197,17 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                 play(mRadioUrl);
 
         }
-		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
+		//else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
 			//stop();
 			//Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru.INTENT_OPEN_PLAYER");
 			//if (launchIntent != null) { 
 			//	startActivity(launchIntent);//null pointer check in case package name was not found
 			//}
 
-			intent.setClassName("radioradio.ru.RadioPlayerService", "radioradio.ru.RadioPlayerService.activity.ExampleActivity");
-			startActivity(intent);
+			//intent.setClassName("radioradio.ru.RadioPlayerService", "radioradio.ru.RadioPlayerService.activity.ExampleActivity");
+			//startActivity(intent);
 
-        }		
+       // }		
         return START_NOT_STICKY;
     }
 
@@ -569,8 +569,14 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
+				.setVisibility(Notification.VISIBILITY_PUBLIC)
+				.setOngoing(true)
                 .build();
-        notification.flags = Notification.FLAG_ONGOING_EVENT;
+			notification.contentView = mNotificationTemplate;
+			notification.flags = Notification.FLAG_ONGOING_EVENT;
+			notification.flags = Notification.FLAG_ONGOING_EVENT;
+			notification.icon = R.drawable.default_art;
+			startForeground(NOTIFICATION_ID, notification);
 
         /**
          * Expanded notification
