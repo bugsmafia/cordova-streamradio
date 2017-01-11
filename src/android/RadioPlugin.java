@@ -15,13 +15,20 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 
 import java.util.List;
-
+import android.widget.Toast;
 //import co.mobiwise.library.radio.RadioListener;
 //import co.mobiwise.library.radio.RadioManager;
 
 
 
 public class RadioPlugin extends CordovaPlugin implements RadioListener {
+	Toast toast = new Toast(getApplicationContext());
+	toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+	toast.setDuration(Toast.LENGTH_LONG);
+	toast.setView(layout);
+	toast.show();
+	
+	
 
   private static final String LOG_TAG = "RadioPlugin";
 
