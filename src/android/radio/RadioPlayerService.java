@@ -40,7 +40,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
     private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.notification.INTENT_OPENPLAYER";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
 
     /**
      * Notification current values
@@ -204,7 +204,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//	startActivity(launchIntent);//null pointer check in case package name was not found
 			//}
 
-			intent.setClassName("radioradio.ru", "radioradio.ru.customcode.activity.ExampleActivity");
+			intent.setClassName("radioradio.ru", "radioradio.ru.customcode.INTENT_OPENPLAYER");
 			startActivity(intent);
 
         }		
