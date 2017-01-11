@@ -40,8 +40,14 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
         this.connectionCallbackContext = callbackContext;
         PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
         pluginResult.setKeepCallback(true);
-
         callbackContext.success();
+		
+		
+		urlString = "http://app.radioradio.ru/stat.php";
+		URL url = new URL(urlString);
+		URLConnection conn = url.openConnection();
+		InputStream is = conn.getInputStream();
+		
         return true;
       } catch (Exception e) {
         Log.e(LOG_TAG, "Exception occurred: ".concat(e.getMessage()));
