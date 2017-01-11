@@ -210,7 +210,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//startActivity(intent);
 
 			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			context.startActivity(intent);
+			startActivity(intent);
 
        }		
         return START_NOT_STICKY;
