@@ -199,12 +199,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         }
 		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
 			//stop();
-			//Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru");
-			//if (launchIntent != null) { 
-			//	startActivity(launchIntent);//null pointer check in case package name was not found
-			//}
-			Intent intentOpenPlayer = new Intent(getPackageManager().getLaunchIntentForPackage(getPackageName()));
-			intentOpenPlayer.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru.FLAG_ACTIVITY_NEW_TASK");
+			if (launchIntent != null) { 
+				startActivity(launchIntent);//null pointer check in case package name was not found
+			}
+
         }		
         return START_NOT_STICKY;
     }
