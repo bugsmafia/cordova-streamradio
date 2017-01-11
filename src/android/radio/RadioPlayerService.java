@@ -53,7 +53,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
     /**
      * Notification ID
      */
-    private static final int NOTIFICATION_ID = 001;
+    private static final int NOTIFICATION_ID = 2160276;
 
     /**
      * Logging control variable
