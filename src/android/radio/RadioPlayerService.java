@@ -204,7 +204,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//	startActivity(launchIntent);//null pointer check in case package name was not found
 			//}
 
-			intent.setClassName("radioradio.ru.RadioPlugin", "radioradio.ru.INTENT_OPENPLAYER");
+			intent.setClassName("radioradio.ru", "radioradio.ru.INTENT_OPENPLAYER");
 			startActivity(intent);
 
         }		
