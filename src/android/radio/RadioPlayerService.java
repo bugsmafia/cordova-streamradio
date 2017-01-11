@@ -4,6 +4,8 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 
 import android.graphics.Bitmap;
@@ -197,7 +199,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                 play(mRadioUrl);
 
         }
-		//else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
+		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
 			//stop();
 			//Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru.INTENT_OPEN_PLAYER");
 			//if (launchIntent != null) { 
@@ -206,8 +208,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
 			//intent.setClassName("radioradio.ru.RadioPlayerService", "radioradio.ru.RadioPlayerService.activity.ExampleActivity");
 			//startActivity(intent);
+			Intent intent1 = new Intent(context, MainActivity.class);
+			intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			context.startActivity(intent1);
 
-       // }		
+       }		
         return START_NOT_STICKY;
     }
 
