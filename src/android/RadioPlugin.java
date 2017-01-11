@@ -63,7 +63,7 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
 	} else if ("update".equals(action)) {
 		//message = mRadioManager.isPlaying();
 		//String message = message;
-		callbackContext.success(mRadioManager.isPlaying);
+		callbackContext.success(mRadioManager.isPlaying());
       return true;
 
     } else if ("stop".equals(action)) {
