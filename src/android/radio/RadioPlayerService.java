@@ -189,7 +189,14 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * If play/pause action clicked on notification,
          * Check player state and stop/play streaming.
          */
-        else if (action.equals(NOTIFICATION_INTENT_PLAY_PAUSE)) {
+        else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
+            Intent openIntent = new Intent(getApplicationContext(), MainActivity.class);
+			openIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(openIntent);
+
+        }
+		
+		else if (action.equals(NOTIFICATION_INTENT_PLAY_PAUSE)) {
             if (isPlaying())
                 stop();
             else if (mRadioUrl != null)
