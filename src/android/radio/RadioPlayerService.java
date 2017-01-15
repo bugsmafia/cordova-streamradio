@@ -209,7 +209,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//intent.setClassName("radioradio.ru.RadioPlayerService", "radioradio.ru.RadioPlayerService.activity.ExampleActivity");
 			//startActivity(intent);
 			//startActivity(new Intent(Intent.ACTION_VIEW ));
-			startActivity(new Intent(RadioPlayerService.this, radioradio.ru.RadioPlayerService));
+			startActivity(new Intent(radioradio.ru.INTENT_OPENPLAYER, radioradio.ru.RadioPlayerService));
 
        }		
         return START_NOT_STICKY;
