@@ -614,11 +614,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                             mExpandedView.setOnClickPendingIntent(fakeR.getId("id", "notification_collapse"), cancelPending);
                                     mExpandedView.setOnClickPendingIntent(fakeR.getId("id", "notification_expanded_play"), playPausePending);
 
-                                            notification.bigContentView = mExpandedView;
+                                            //notification.bigContentView = mExpandedView;
         }
 
         if (mNotificationManager != null)
-            mNotificationManager.notify(NOTIFICATION_ID, notification);
+            //mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     public void updateNotification(String singerName, String songName, int smallImage, int artImage) {
@@ -626,7 +626,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         this.songName = songName;
         this.smallImage = smallImage;
         this.artImage = BitmapFactory.decodeResource(getResources(), artImage);
-        buildNotification();
+        //buildNotification();
     }
 
 
@@ -635,7 +635,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         this.songName = songName;
         this.smallImage = smallImage;
         this.artImage = artImage;
-        buildNotification();
+        //buildNotification();
     }
 
 
