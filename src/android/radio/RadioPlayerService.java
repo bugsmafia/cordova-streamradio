@@ -190,7 +190,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          * Check player state and stop/play streaming.
          */
         else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
-            Intent openIntent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent openIntent = new Intent(getApplicationContext(), com.imsd.radio.RadioPlayerService.class);
 			openIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(openIntent);
 
