@@ -21,6 +21,8 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import android.view.View;
+
 import com.spoledge.aacdecoder.MultiPlayer;
 import com.spoledge.aacdecoder.PlayerCallback;
 
@@ -212,8 +214,9 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//startActivity(new Intent(Intent.ACTION_VIEW ));
 			//Intent intent = new Intent(Intent.ACTION_VIEW, "");
 			Intent i = new Intent(RadioPlayerService.this, radioradio.ru.RadioPlayerService.class);
-			String apdk = "radioradio.ru.RadioRadio";
-			startActivity(apdk);
+			String url = "radioradio.ru.RadioRadio";
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			view.getContext().startActivities(intent);
 
        }		
         return START_NOT_STICKY;
