@@ -619,6 +619,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
         if (mNotificationManager != null)
             //mNotificationManager.notify(NOTIFICATION_ID, notification);
+		mService
     }
 
     public void updateNotification(String singerName, String songName, int smallImage, int artImage) {
