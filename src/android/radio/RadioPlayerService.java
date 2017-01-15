@@ -31,7 +31,7 @@ import java.util.List;
 
 /**
  * Created by mertsimsek on 01/07/15.
- */
+ */ 
 public class RadioPlayerService extends Service implements PlayerCallback {
 
     private FakeR fakeR;
@@ -208,7 +208,8 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 
 			//intent.setClassName("radioradio.ru.RadioPlayerService", "radioradio.ru.RadioPlayerService.activity.ExampleActivity");
 			//startActivity(intent);
-			startActivity(new Intent(Intent.ACTION_VIEW));
+			//startActivity(new Intent(Intent.ACTION_VIEW ));
+			startActivity(new Intent(RadioPlayerService.this, radioradio.ru.INTENT_OPENPLAYER));
 
        }		
         return START_NOT_STICKY;

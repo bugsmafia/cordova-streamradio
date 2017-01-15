@@ -33,7 +33,6 @@
               <action android:name="radioradio.ru.INTENT_PLAYPAUSE"/>
               <action android:name="radioradio.ru.INTENT_OPENPLAYER"/>
               <action android:name="radioradio.ru.INTENT_CANCEL"/>
-			  <action android:name="radioradio.ru.library.notification.media.INTENT_OPENPLAYER"/>
           </intent-filter>
         </service>
       </config-file>
