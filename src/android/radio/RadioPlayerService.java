@@ -583,7 +583,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 // use System.currentTimeMillis() to have a unique ID for the pending intent
 //PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
 
-/*
+
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
                 .setContentIntent(openPending)
@@ -597,8 +597,8 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			notification.flags = Notification.FLAG_ONGOING_EVENT;
 			notification.flags = Notification.FLAG_ONGOING_EVENT;
 			notification.icon = R.drawable.default_art;
-			startForeground(NOTIFICATION_ID, notification);
-*/
+			//startForeground(NOTIFICATION_ID, notification);
+
         /**
          * Expanded notification
          */
