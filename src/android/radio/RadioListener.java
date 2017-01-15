@@ -1,4 +1,4 @@
-package radioradio.ru;
+package com.imsd.radio;
 
 public interface RadioListener {
 

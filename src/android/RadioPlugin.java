@@ -1,4 +1,4 @@
-package radioradio.ru;
+package com.imsd.radio;
 
 
 // rm -fr MyApp; cordova create MyApp; cd MyApp;  cordova platform add android; cordova plugin add ../cordova-plugin/;
@@ -41,7 +41,7 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
         PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
         pluginResult.setKeepCallback(true);
 
-        callbackContext.success();
+        //callbackContext.success();
         return true;
       } catch (Exception e) {
         Log.e(LOG_TAG, "Exception occurred: ".concat(e.getMessage()));
@@ -58,17 +58,6 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
     } else if ("play".equals(action)) {
       mRadioManager.startRadio(args.getString(0), args.getString(1), args.getString(2));
       callbackContext.success();
-      return true;
-
-	} else if ("update".equals(action)) {
-		if(mRadioManager.isPlaying()){
-			String mess = "Играет";
-			callbackContext.success(mess);
-		} else {
-			String mess = "Стоит";
-			callbackContext.success(mess);
-		}
-		
       return true;
 
     } else if ("stop".equals(action)) {
@@ -103,10 +92,6 @@ public class RadioPlugin extends CordovaPlugin implements RadioListener {
   @Override
   public void onRadioStarted() {
     Log.e(LOG_TAG, "RADIO STATE : PLAYING...");
-	PluginResult pluginResult = null;
-	pluginResult = new PluginResult(PluginResult.Status.OK, "RADIO STATE : PLAYING...");
-	pluginResult.setKeepCallback(true);
-	this.connectionCallbackContext.sendPluginResult(pluginResult);
   }
 
   @Override

@@ -22,17 +22,17 @@
 
       <config-file target="res/xml/config.xml" parent="/*">
           <feature name="RadioPlugin">
-              <param name="android-package" value="radioradio.ru.RadioPlugin"/>
+              <param name="android-package" value="com.imsd.radio.RadioPlugin"/>
               <param name="onload" value="true" />
           </feature>
       </config-file>
 
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        <service android:name="radioradio.ru.RadioPlayerService">
+        <service android:name="com.imsd.radio.RadioPlayerService">
           <intent-filter>
-              <action android:name="radioradio.ru.INTENT_PLAYPAUSE"/>
-              <action android:name="radioradio.ru.INTENT_OPENPLAYER"/>
-              <action android:name="radioradio.ru.INTENT_CANCEL"/>
+              <action android:name="com.imsd.radio.INTENT_PLAYPAUSE"/>
+              <action android:name="com.imsd.radio.INTENT_OPENPLAYER"/>
+              <action android:name="com.imsd.radio.INTENT_CANCEL"/>
           </intent-filter>
         </service>
       </config-file>

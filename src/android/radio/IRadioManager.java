@@ -1,4 +1,4 @@
-package radioradio.ru;
+package com.imsd.radio;
 import android.graphics.Bitmap;
 
 public interface IRadioManager {

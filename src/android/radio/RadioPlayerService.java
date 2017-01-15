@@ -1,16 +1,12 @@
-package radioradio.ru;
+package com.imsd.radio;
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.view.View;
 import android.content.Intent;
-
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory; 
+import android.graphics.BitmapFactory;
 import android.media.AudioTrack;
 import android.os.AsyncTask;
 import android.os.Binder;
@@ -20,8 +16,6 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.RemoteViews;
-
-import android.view.View;
 
 import com.spoledge.aacdecoder.MultiPlayer;
 import com.spoledge.aacdecoder.PlayerCallback;
@@ -34,18 +28,18 @@ import java.util.List;
 
 /**
  * Created by mertsimsek on 01/07/15.
- */ 
+ */
 public class RadioPlayerService extends Service implements PlayerCallback {
 
     private FakeR fakeR;
     /**
      * Notification action intent strings
      */
-    private static final String NOTIFICATION_INTENT_PLAY_PAUSE = "radioradio.ru.INTENT_PLAYPAUSE";
+    private static final String NOTIFICATION_INTENT_PLAY_PAUSE = "com.imsd.radio.INTENT_PLAYPAUSE";
 
-    private static final String NOTIFICATION_INTENT_CANCEL = "radioradio.ru.INTENT_CANCEL";
+    private static final String NOTIFICATION_INTENT_CANCEL = "com.imsd.radio.INTENT_CANCEL";
 
-    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "radioradio.ru.INTENT_OPENPLAYER";
+    private static final String NOTIFICATION_INTENT_OPEN_PLAYER = "com.imsd.radio.INTENT_OPENPLAYER";
 
     /**
      * Notification current values
@@ -58,7 +52,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
     /**
      * Notification ID
      */
-    private static final int NOTIFICATION_ID = 2160276;
+    private static final int NOTIFICATION_ID = 001;
 
     /**
      * Logging control variable
@@ -176,6 +170,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
         String action = intent.getAction();
 
         /**
@@ -201,32 +196,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                 play(mRadioUrl);
 
         }
-		else if (action.equals(NOTIFICATION_INTENT_OPEN_PLAYER)) {
-			//stop();
-			//Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru.INTENT_OPEN_PLAYER");
-			//if (launchIntent != null) { 
-			//	startActivity(launchIntent);//null pointer check in case package name was not found
-			//}
 
-			//intent.setClassName("radioradio.ru.RadioPlayerService", "radioradio.ru.RadioPlayerService.activity.ExampleActivity");
-			//startActivity(intent);
-			//startActivity(new Intent(Intent.ACTION_VIEW ));
-			//Intent intent = new Intent(Intent.ACTION_VIEW, "");
-			//Intent i = new Intent(MainActivity.this, RadioPlayerService.class);
-			//String data = "radioradio.ru.RadioRadio";
-			//Intent intent = new Intent(Intent.ACTION_VIEW, data);
-			//Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru.INTENT_OPEN_PLAYER");
-			//startActivity(intent);
-			//Intent i = new Intent(this, radioradio.ru.RadioPlayerService.class);
-			//startActivity(i);
-			//Intent i = Intent(Intent.FLAG_ACTIVITY_NEW_TASK, RadioPlayerService.class);
-			//i.addFlags(Intent.INTENT_OPENPLAYER);
-			//i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			//i.addFlags(Intent.NOTIFICATION_INTENT_OPEN_PLAYER);
-			//startActivity(i);
-			//startActivity(new Intent(radioradio.ru.INTENT_OPENPLAYER, radioradio.ru.RadioPlayerService));
-
-       }		
         return START_NOT_STICKY;
     }
 
@@ -541,9 +511,8 @@ public class RadioPlayerService extends Service implements PlayerCallback {
          */
         PendingIntent playPausePending = PendingIntent.getService(this, 0, intentPlayPause, 0);
         PendingIntent openPending = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
-		
         PendingIntent cancelPending = PendingIntent.getService(this, 0, intentCancel, 0);
-		//PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, 0);
+
         /**
          * Remote view for normal view
          */
@@ -572,32 +541,14 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         /**
          * Create notification instance
          */
-		 
-		 // .setContentIntent(openPending)
-		//Intent resultIntent = new Intent(context, cordovaActivity.getClass());
-		//PendingIntent.getService(this, 0, intentOpenPlayer, 0);
-		//resultIntent.setAction(Intent.ACTION_MAIN);
-		//resultIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-		//PendingIntent resultPendingIntent = PendingIntent.getService(this, 0, intentOpenPlayer, 0);
-		//Intent intent = new Intent(this, NotificationReceiver.class);
-// use System.currentTimeMillis() to have a unique ID for the pending intent
-//PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
-
-
         Notification notification = notificationBuilder
                 .setSmallIcon(smallImage)
                 .setContentIntent(openPending)
                 .setPriority(Notification.PRIORITY_DEFAULT)
                 .setContent(mNotificationTemplate)
                 .setUsesChronometer(true)
-				.setVisibility(Notification.VISIBILITY_PUBLIC)
-				.setOngoing(true)
                 .build();
-			notification.contentView = mNotificationTemplate;
-			notification.flags = Notification.FLAG_ONGOING_EVENT;
-			notification.flags = Notification.FLAG_ONGOING_EVENT;
-			notification.icon = R.drawable.default_art;
-			startForeground(NOTIFICATION_ID, notification);
+        notification.flags = Notification.FLAG_ONGOING_EVENT;
 
         /**
          * Expanded notification
@@ -614,12 +565,11 @@ public class RadioPlayerService extends Service implements PlayerCallback {
                             mExpandedView.setOnClickPendingIntent(fakeR.getId("id", "notification_collapse"), cancelPending);
                                     mExpandedView.setOnClickPendingIntent(fakeR.getId("id", "notification_expanded_play"), playPausePending);
 
-                                            //notification.bigContentView = mExpandedView;
+                                            notification.bigContentView = mExpandedView;
         }
 
-        if (mNotificationManager != null){
-            //mNotificationManager.notify(NOTIFICATION_ID, notification);
-		}
+        if (mNotificationManager != null)
+            mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     public void updateNotification(String singerName, String songName, int smallImage, int artImage) {
@@ -627,7 +577,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         this.songName = songName;
         this.smallImage = smallImage;
         this.artImage = BitmapFactory.decodeResource(getResources(), artImage);
-        //buildNotification();
+        buildNotification();
     }
 
 
@@ -636,7 +586,7 @@ public class RadioPlayerService extends Service implements PlayerCallback {
         this.songName = songName;
         this.smallImage = smallImage;
         this.artImage = artImage;
-        //buildNotification();
+        buildNotification();
     }
 
 

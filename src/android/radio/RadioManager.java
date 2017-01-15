@@ -1,4 +1,4 @@
-package radioradio.ru;
+package com.imsd.radio;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -87,12 +87,7 @@ public class RadioManager implements IRadioManager {
     public void startRadio(String streamURL) {
         mService.play(streamURL);
     }
-	
-	/*
-	public void UpdateRadio(String singerName, String songName, int smallArt, int bigArt) {
-      mService.updateNotification(singerName, songName, smallArt, bigArt);
-    }
-	/*
+
     /**
      * Stop Radio Streaming
      */
