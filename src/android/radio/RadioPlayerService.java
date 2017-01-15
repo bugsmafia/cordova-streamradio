@@ -176,7 +176,9 @@ public class RadioPlayerService extends Service implements PlayerCallback {
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
+	console.log(intent);
+	console.log(flags);
+	console.log(startId);
         String action = intent.getAction();
 
         /**
