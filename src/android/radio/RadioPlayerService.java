@@ -176,9 +176,6 @@ public class RadioPlayerService extends Service implements PlayerCallback {
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-	log(intent);
-	log(flags);
-	log(startId);
         String action = intent.getAction();
 
         /**
@@ -220,7 +217,12 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//Intent intent = new Intent(Intent.ACTION_VIEW, data);
 			//Intent launchIntent = getPackageManager().getLaunchIntentForPackage("radioradio.ru.INTENT_OPEN_PLAYER");
 			//startActivity(intent);
+			//Intent i = new Intent(this, radioradio.ru.RadioPlayerService.class);
+			//startActivity(i);
 			Intent i = new Intent(this, radioradio.ru.RadioPlayerService.class);
+			i.addFlags(Intent.INTENT_OPENPLAYER);
+			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			i.addFlags(Intent.NOTIFICATION_INTENT_OPEN_PLAYER));
 			startActivity(i);
 			//startActivity(new Intent(radioradio.ru.INTENT_OPENPLAYER, radioradio.ru.RadioPlayerService));
 
