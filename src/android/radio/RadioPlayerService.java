@@ -213,9 +213,9 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//startActivity(intent);
 			//startActivity(new Intent(Intent.ACTION_VIEW ));
 			//Intent intent = new Intent(Intent.ACTION_VIEW, "");
-			Intent i = new Intent(RadioPlayerService.this, radioradio.ru.RadioPlayerService.class);
-			String url = "radioradio.ru.RadioRadio";
-			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			//Intent i = new Intent(RadioPlayerService.this, radioradio.ru.RadioPlayerService.class);
+			String data = "radioradio.ru.RadioRadio";
+			//Intent intent = new Intent(Intent.ACTION_VIEW, data);
 			view.getContext().startActivities(intent);
 
        }		
