@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+
 import android.content.Intent;
 
 import android.graphics.Bitmap;
@@ -210,11 +211,8 @@ public class RadioPlayerService extends Service implements PlayerCallback {
 			//startActivity(intent);
 			//startActivity(new Intent(Intent.ACTION_VIEW ));
 			//Intent intent = new Intent(Intent.ACTION_VIEW, "");
-			Context oContext;
-			oContext= mContext;
-			Intent i = new Intent(android.content.Intent.ACTION_VIEW, 
-			Uri.parse("#"));
-			oContext.startActivity(i);
+			Intent i = new Intent(android.content.Intent.ACTION_VIEW, Context);
+			Intent.startActivity(i);
 
        }		
         return START_NOT_STICKY;
